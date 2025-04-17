@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'profile_screen.dart';
 import 'settings_screen.dart';
+import 'chat_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,8 +75,11 @@ class HomeScreen extends StatelessWidget {
             leading: Icon(board['icon'], color: Colors.blue),
             title: Text(board['name']),
             onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Open "${board['name']}" board')),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => ChatScreen(boardName: board['name']),
+                ),
               );
             },
           );
