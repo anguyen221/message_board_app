@@ -58,10 +58,10 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
+              leading: const Icon(Icons.exit_to_app), 
+              title: const Text('Logout'),
               onTap: () {
-                _logout(context);
+                _logout(context); 
                 Navigator.pop(context);
               },
             ),
